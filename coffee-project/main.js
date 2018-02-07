@@ -11,7 +11,7 @@ const renderCoffee = (coffee) => {
 
 const renderCoffees = (coffees) => {
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
+    for(let i = 0; i <= coffees.length -1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
