@@ -61,7 +61,7 @@ ajaxGet('../coffee-data.json', function(data) {
 
   coffeeBody.innerHTML = renderCoffees(coffees);
 
-  submitButton.addEventListener('click', updateCoffees);
+  // submitButton.addEventListener('click', updateCoffees);
 
   const containsString = (str) => {
     let newArr = [];

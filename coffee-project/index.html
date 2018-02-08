@@ -11,33 +11,32 @@
 <div id="coffee-container">
   <div id="head-container">
       <div id="head-div">
-        <h1 id="coffee-txt">Coffee</h1><h1 id="exclaim">!</h1>
+        <div id="title-wrapper">
+          <h1 id="coffee-txt">Coffee</h1><h1 id="exclaim">!</h1>
+        </div>
+        <div id="main-wrapper">
+          <div id="form-container">
+            <form id="search-coffee-form">
+              <select id="roast-selection" class="coffee-form-item">
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+              </select>
+              <input autofocus id="search" type="text" placeholder="Search" class="coffee-form-item"/>
+            </form>
+            <form id="add-coffee-form">
+              <select id="add-roast-selection" class="coffee-form-item">
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+              </select>
+              <input id="add-coffee-input" class="coffee-form-item" type="text" placeholder="add coffee"/>
+            </form>
+          </div>
+        </div>
       </div>
   </div>
-
-  <div id="main-wrapper">
-    <div id="form-container">
-      <form id="coffee-form">
-        <select id="roast-selection" class="coffee-form-item">
-          <option>light</option>
-          <option>medium</option>
-          <option>dark</option>
-        </select>
-        <input id="submit" type="submit" class="coffee-form-item"/>
-        <input autofocus id="search" type="text" placeholder="Search" class="coffee-form-item"/>
-      </form>
-    </div>
-    <div id="coffees"></div>
-    <div id="add-coffee-form-wrap">
-      <form id="add-coffee-form">
-        <select id="add-roast-selection" class="coffee-form-item">
-          <option>light</option>
-          <option>medium</option>
-          <option>dark</option>
-        </select>
-        <input id="add-coffee-input" type="text" placeholder="add coffee"/>
-      </form>
-    </div>
+  <div id="coffees"></div>
   </div>
 </div>
 

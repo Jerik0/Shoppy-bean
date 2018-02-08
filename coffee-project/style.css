@@ -3,10 +3,40 @@ html, body {
   margin: 0;
   color: #2a2a2a;
   font-family: 'Indie Flower', cursive;
+  height: 100%;
 }
 
 *:focus {
   outline: none;
+}
+
+#head-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+#head-div {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2em;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: #141414;
+  width: 100%;
+  padding: 5px 10px;
+  border-bottom: 2px solid cyan;
+}
+
+#title-wrapper > h1 {
+  margin: 0;
+  display: inline;
+  font-weight: 300;
 }
 
 #main-wrapper {
@@ -18,43 +48,10 @@ html, body {
   align-items: center;
 }
 
-#form-container {
+#title-wrapper {
+  justify-content: center;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-
-#coffee-container {
-  background: url('img/swirl_pattern.png');
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#head-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-}
-
-#head-div {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.2em;
-  justify-content: center;
-  background-color: #141414;
-  width: 100%;
-  padding: 5px 10px;
-  display: flex;
-  border-bottom: 2px solid cyan;
-}
-
-#head-div > h1 {
-  margin: 0;
-  display: inline;
-  font-weight: 300;
 }
 
 #coffee-txt {
@@ -65,7 +62,26 @@ html, body {
   color: cyan;
 }
 
+#coffee-container {
+  position: relative;
+  height: 100%;
+  background: url('img/swirl_pattern.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #coffees {
+  box-shadow: inset 1px 1px 3px black;
+  background-color: #e6eeec;
+  border: 1px solid cyan;
+  position: fixed;
+  top: 0;
+  border-radius: 8px;
+  height: 50vh;
+  margin-top: 250px;
+  align-content: flex-start;
   width: 80%;
   overflow: scroll;
   display: flex;
@@ -77,6 +93,7 @@ html, body {
 .coffee {
   background-color: #fff;
   width: 20%;
+  height: 23%;
   overflow: visible;
   align-content: center;
   text-align: center;
@@ -96,26 +113,32 @@ html, body {
   color: #30d6ff;
 }
 
-#coffee-form {
-  margin: 8px;
-  justify-content: center;
-  width: 80%;
+#form-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+#search-coffee-form, #add-coffee-form {
+  /*flex-grow: 1;*/
+  margin: 20px 20px 0 20px;
+  background-color: #141414;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  border: 1px dashed #c7dde5;
 }
 
 .coffee-form-item {
   background-color: #c7dde5;
   padding: 5px;
+  /*border: 1px solid #30d6ff;*/
+  border-radius: 5px;
   margin: 10px;
-  border: 1px solid #30d6ff;
 }
 
-#submit {
-  border-radius: 5px;
-}
-
-#search {
-  border-radius: 5px;
+#search, #add-coffee-input {
   text-align: right;
 }
