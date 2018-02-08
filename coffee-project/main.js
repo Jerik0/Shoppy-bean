@@ -2,9 +2,10 @@
 
 let search = document.getElementById('search');
 let coffeeBody = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let addRoastSelection = document.querySelector('#add-roast-selection');
+let addSubmitBtn = document.querySelector('#add-coffee-submit');
+// const fetch = require('node-fetch');
 
 const ajaxGet = (url, callback) => {
   let xmlhttp = new XMLHttpRequest();
@@ -12,7 +13,6 @@ const ajaxGet = (url, callback) => {
   xmlhttp.onreadystatechange = function() {
     let data;
     if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-      // console.log('response text: ' + xmlhttp.responseText);
       try {
         data = JSON.parse(xmlhttp.responseText);
       } catch(err) {
@@ -54,6 +54,8 @@ ajaxGet('../coffee-data.json', function(data) {
     coffees.forEach(function(coffee) {
       if (coffee.roast === selectedRoast) {
         filteredCoffees.push(coffee);
+      } else if(selectedRoast === 'all') {
+        filteredCoffees = coffees;
       }
     });
     coffeeBody.innerHTML = renderCoffees(filteredCoffees);
@@ -61,7 +63,7 @@ ajaxGet('../coffee-data.json', function(data) {
 
   coffeeBody.innerHTML = renderCoffees(coffees);
 
-  // submitButton.addEventListener('click', updateCoffees);
+  roastSelection.addEventListener('input', updateCoffees);
 
   const containsString = (str) => {
     let newArr = [];
@@ -75,6 +77,26 @@ ajaxGet('../coffee-data.json', function(data) {
 
   search.addEventListener('input', function() {
     containsString(this.value);
+  });
+
+  const addCoffee = (coffee, roast, coffeesArr) => {
+    const id = (coffeesArr[coffeesArr.length -1].id + 1);
+    const newCoffee = {id: id, name: coffee, roast: roast} + ',';
+    const url = '../coffee-data.json';
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newCoffee),
+    };
+    fetch(url, options)
+        .then(/* post was created successfully */)
+        .catch(/* handle errors */);
+  };
+
+  addSubmitBtn.addEventListener('click', function() {
+    addCoffee(this.value, addRoastSelection.value);
   });
 });
 

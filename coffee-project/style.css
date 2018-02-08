@@ -29,7 +29,7 @@ html, body {
   align-items: center;
   background-color: #141414;
   width: 100%;
-  padding: 5px 10px;
+  /*padding: 5px 10px;*/
   border-bottom: 2px solid cyan;
 }
 
@@ -121,14 +121,13 @@ html, body {
 }
 
 #search-coffee-form, #add-coffee-form {
-  /*flex-grow: 1;*/
   margin: 20px 20px 0 20px;
   background-color: #141414;
   justify-content: center;
   display: flex;
   flex-direction: row;
   padding: 5px;
-  border: 1px dashed #c7dde5;
+  /*border: 1px dashed #c7dde5;*/
 }
 
 .coffee-form-item {
@@ -139,5 +138,10 @@ html, body {
 }
 
 #search, #add-coffee-input {
+  box-shadow: inset 1px 1px 3px black;
   text-align: right;
+}
+
+#add-coffee-submit {
+
 }
