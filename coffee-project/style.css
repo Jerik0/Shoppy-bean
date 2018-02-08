@@ -132,9 +132,8 @@ html, body {
 }
 
 .coffee-form-item {
-  background-color: #c7dde5;
+  background-color: #e6eeec;
   padding: 5px;
-  /*border: 1px solid #30d6ff;*/
   border-radius: 5px;
   margin: 10px;
 }
