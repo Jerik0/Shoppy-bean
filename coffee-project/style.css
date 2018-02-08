@@ -1,58 +1,114 @@
 html, body {
   box-sizing: border-box;
+  margin: 0;
+  color: #2a2a2a;
+  font-family: 'Indie Flower', cursive;
+}
+
+*:focus {
+  outline: none;
+}
+
+#main-wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 #coffee-container {
+  background: url('img/swirl_pattern.png');
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#head-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 #head-div {
-  border: 1px solid black;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2em;
+  justify-content: center;
+  background-color: #141414;
+  width: 100%;
   padding: 5px 10px;
   display: flex;
+  border-bottom: 2px solid cyan;
 }
 
-.head-div-h1 {
-  margin: 5px;
-  padding: 5px;
+#head-div > h1 {
+  margin: 0;
+  display: inline;
+  font-weight: 300;
+}
+
+#coffee-txt {
+  color: #fff;
+}
+
+#exclaim {
+  color: cyan;
 }
 
 #coffees {
-  width: 500px;
+  width: 80%;
   overflow: scroll;
-  border: 1px solid blue;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .coffee {
-  width: 100%;
+  background-color: #fff;
+  width: 20%;
   overflow: visible;
   align-content: center;
   text-align: center;
-  border: 1px solid red;
+  box-shadow: #3c3c3c 1px 1px 3px;
+  border: 1px solid #8ffbf3;
   display: flex;
   flex-direction: column;
   margin: 10px;
+  padding: 10px;
 }
 
 .coffee > h2, .coffee > p {
   margin: 0;
 }
 
+.coffee > p {
+  color: #30d6ff;
+}
+
 #coffee-form {
+  margin: 8px;
+  justify-content: center;
+  width: 80%;
   display: flex;
   flex-direction: row;
 }
 
 .coffee-form-item {
+  background-color: #c7dde5;
+  padding: 5px;
   margin: 10px;
-  border: 1px solid black;
+  border: 1px solid #30d6ff;
 }
 
 #submit {
@@ -60,5 +116,6 @@ html, body {
 }
 
 #search {
+  border-radius: 5px;
   text-align: right;
 }

@@ -3,31 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Coffee!</h1>
 
-    <form id="coffee-form">
+<div id="coffee-container">
+  <div id="head-container">
+      <div id="head-div">
+        <h1 id="coffee-txt">Coffee</h1><h1 id="exclaim">!</h1>
+      </div>
+  </div>
+
+  <div id="main-wrapper">
+    <div id="form-container">
+      <form id="coffee-form">
         <select id="roast-selection" class="coffee-form-item">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
+          <option>light</option>
+          <option>medium</option>
+          <option>dark</option>
         </select>
         <input id="submit" type="submit" class="coffee-form-item"/>
-        <input id="search" type="text" placeholder="Search" class="coffee-form-item"/>
-    </form>
-
-    <div id="coffee-container">
-        <div id="head-container">
-            <div id="head-div">
-                <h1 class="head-div-h1">NAME</h1>
-                <h1 class="head-div-h1">ROAST</h1>
-            </div>
-        </div>
-        <div id="coffees"></div>
+        <input autofocus id="search" type="text" placeholder="Search" class="coffee-form-item"/>
+      </form>
     </div>
+    <div id="coffees"></div>
+    <div id="add-coffee-form-wrap">
+      <form id="add-coffee-form">
+        <select id="add-roast-selection" class="coffee-form-item">
+          <option>light</option>
+          <option>medium</option>
+          <option>dark</option>
+        </select>
+        <input id="add-coffee-input" type="text" placeholder="add coffee"/>
+      </form>
+    </div>
+  </div>
+</div>
 
-    <script src="main.js"></script>
+<script src="../coffee-data.json"></script>
+<script src="main.js"></script>
 </body>
 </html>
